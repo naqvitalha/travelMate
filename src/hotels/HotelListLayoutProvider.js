@@ -27,11 +27,11 @@ export default class HotelListLayoutProvider extends LayoutProvider {
     setLayoutForType(type, dimension) {
         switch(type){
             case "HOTEL_CARD":
-                dimension.height = 180;
+                dimension.height = 150;
                 dimension.width = deviceWidth;
                 break;
             case "BANNER":
-                dimension.height = 120;
+                dimension.height = 105;
                 dimension.width = deviceWidth;
                 break;
         }

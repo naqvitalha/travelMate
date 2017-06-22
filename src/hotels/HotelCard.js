@@ -22,31 +22,35 @@ class HotelCard extends React.Component {
         let data = this.props.data;
         return(
             <View style={{flex : 1}}>
-                <View style={{marginLeft : 16,marginTop : 16,height : 20, width : deviceWidth}}>
-                    <Text>{data.usp}</Text>
-                </View>
                 <View style={{flexDirection : 'row', flex : 1, marginTop : 8}}>
                     <Image style={{height : 96, width : 96, marginTop : 8, marginLeft : 16}} source={{uri: data.imageURL}}/>
-                    <View style={{marginLeft : 16, marginTop : 4, marginRight : 16, flex : 1}}>
-                        <Text>{data.title}</Text>
-                        <Text>{data.location}</Text>
-                        <View style={{flexDirection : 'row', justifyContent : 'space-between'}}>
+                    <View style={{marginLeft : 16, marginTop : 4, flex : 1}}>
+                        <Text style={{color :'#212121', fontSize : 14, fontFamily : 'roboto-medium'}}>{data.title}</Text>
+                        <Text style={{color :'#878787', fontSize : 12, fontFamily : 'roboto-medium', marginTop : 4}}>{data.location}</Text>
+                        <View style={{flexDirection : 'row', justifyContent : 'space-between', marginTop : 4}}>
                             <View style={{flexDirection : 'row'}}>
-                                <Text>{data.rating} stars</Text>
-                                <Text style={{marginLeft : 8}}>{data.reviews} reviews</Text>
+                                <View style={{backgroundColor : '#15be48', flexDirection : 'row', marginTop : 2, borderRadius : 1}}>
+                                    <Text style={{color :'#ffffff', fontSize : 12, fontFamily : 'roboto-medium', marginLeft : 2}} >{data.rating}</Text>
+                                    <Text style={{color :'#ffffff', fontSize : 12, fontFamily : 'roboto-medium', marginLeft : 2, marginRight : 2}} >&#9733;</Text>
+                                </View>
+                                <Text style={{color :'#878787', fontSize : 12, fontFamily : 'roboto-medium', marginLeft : 4, marginTop : 2}}>{data.reviews} reviews</Text>
                             </View>
-                            <Text>{data.pricePerNight}</Text>
                         </View>
-                        <Text>{data.discount}</Text>
+                        <Text style={{color :'#212121', fontSize : 16, fontFamily : 'roboto-medium'}} >&#8377;{data.pricePerNight}</Text>
+                        <Text style={{color :'#388e3c', fontSize : 14, fontFamily : 'roboto-medium', marginTop : 1}}>{data.discount}</Text>
                         {data.mmtAssured ?
-                            <Text>MMT Assured</Text>
+                            <View style={{flex : 1, height : 25, alignItems : 'flex-end'}}>
+                                <View style={{height : 25, width : 100, backgroundColor : '#124680', justifyContent : 'center', alignItems : 'center'}}>
+                                    <Text style={{color :'#ffffff', fontSize : 12, fontFamily : 'roboto-medium'}}>MMT Assured</Text>
+                                </View>
+                            </View>
                             : null
                         }
                     </View>
                 </View>
                 <View style={{width : deviceWidth, height : 30, justifyContent: 'center', marginLeft : 16, marginRight : 16}}>
                     {data.fewRoomsSignal ?
-                        <Text>Few Rooms Left</Text>
+                        <Text style={{color :'#DD5354', fontSize : 12, fontFamily : 'roboto-medium', marginLeft :4, marginTop:-12}}>Few Rooms Left</Text>
                         : null
                     }
                 </View>

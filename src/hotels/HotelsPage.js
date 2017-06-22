@@ -36,10 +36,10 @@ class HotelsPage extends Component {
         let itemContent;
         switch (itemType){
             case "HOTEL_CARD":
-                itemContent =  <HotelCard data={itemData}/>
+                itemContent =  <HotelCard data={itemData}/>;
                 break;
             case "BANNER":
-                itemContent = <Banner data={itemData}/>
+                itemContent = <Banner data={itemData}/>;
                 break;
         }
         return itemContent;
