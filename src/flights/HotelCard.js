@@ -5,7 +5,7 @@ import Constants from "../constants/Constants";
 export default class HotelCard extends Component {
     render() {
         return (
-            <TouchableHighlight underlayColor="#878787" onPress={() => {
+            <TouchableHighlight style={{backgroundColor:"#F7F7F7", elevation: 1, height: 80}} underlayColor="#878787" onPress={() => {
                 NavigationManager.navigate(Constants.hotelAction);
             }}>
                 <View style={styles.container}>

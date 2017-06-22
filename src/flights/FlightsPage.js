@@ -22,7 +22,7 @@ export default class FlightsPage extends Component {
             switch (type) {
                 case "HOTEL_ITEM":
                     dim.width = width;
-                    dim.height = 80;
+                    dim.height = 83;
                     break;
                 case "FL_ITEM":
                     dim.width = width;
