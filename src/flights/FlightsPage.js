@@ -1,10 +1,12 @@
 import React, {Component} from "react";
 import {RecyclerListView, LayoutProvider, DataProvider} from "recyclerlistview";
-import {View, Dimensions} from "react-native";
+import {View, Dimensions, Text, Image} from "react-native";
 import FlightCard from "./FlightCard";
 import FlightData from "./FlightData";
 import TimeWidget from "./TimeWidget";
 import HotelCard from "./HotelCard";
+import TopWidget from "./TopWidget";
+import AndroidGenericUtilsModule from "fk-react-native-sdk/modules/android/AndroidGenericUtilsModule";
 let {height, width} = Dimensions.get('window');
 export default class FlightsPage extends Component {
     constructor(args) {
@@ -13,7 +15,7 @@ export default class FlightsPage extends Component {
             dataProvider: new DataProvider((r1, r2) => {
                 return r1 !== r2
             }).cloneWithRows(FlightData)
-        }
+        };
         this._layoutProvider = new LayoutProvider((i) => {
             return this.state.dataProvider.getDataForIndex(i).type;
         }, (type, dim) => {
@@ -26,6 +28,10 @@ export default class FlightsPage extends Component {
                     dim.width = width;
                     dim.height = 80;
                     break;
+                case "HEADER":
+                    dim.width = width;
+                    dim.height = 300;
+                    break;
                 default:
                     dim.width = width;
                     dim.height = 0;
@@ -35,12 +41,20 @@ export default class FlightsPage extends Component {
         this._renderRow = this._renderRow.bind(this);
     }
 
+    componentWillMount(){
+        if (AndroidGenericUtilsModule.isAvailable()) {
+            AndroidGenericUtilsModule.setStatusBarColor('#FF8C00');
+        }
+    }
+
     _renderRow(type, data) {
         switch (type) {
             case "HOTEL_ITEM":
                 return <HotelCard/>
             case "FL_ITEM":
                 return <FlightCard data={data}/>;
+            case "HEADER":
+                return <TopWidget data={data}/>;
             default:
                 return null;
 
@@ -50,6 +64,10 @@ export default class FlightsPage extends Component {
 
     render() {
         return <View style={styles.container}>
+            <View style={styles.header}>
+                <Image  source={{uri:'custom_back_icon'}} style={styles.backIcon}/>
+                <Text style={styles.headerText}>Yatra Travels</Text>
+            </View>
             <RecyclerListView rowRenderer={this._renderRow} dataProvider={this.state.dataProvider}
                               layoutProvider={this._layoutProvider}/>
         </View>
@@ -57,6 +75,26 @@ export default class FlightsPage extends Component {
 }
 const styles = {
     container: {
-        flex: 1
+        flex: 1,
+
+    },
+    header:{
+        height: 65,
+        backgroundColor:'orange',
+        alignItems:"center",
+        flexDirection:"row",
+        elevation:4
+    },
+    headerText:{
+        color:'white',
+        fontSize:18,
+        marginLeft: 16,
+        paddingBottom:3
+    },
+    backIcon:{
+        height:23,
+        width:23,
+        marginLeft:16
+
     }
 }

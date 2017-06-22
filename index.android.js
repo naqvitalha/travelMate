@@ -17,6 +17,6 @@ import HotelsPage from './src/hotels/HotelsPage';
 //#endif
 //#if [DEV]
 
-AppRegistry.registerComponent("AwesomeProject", () => HotelsPage);
+AppRegistry.registerComponent("AwesomeProject", () => FlightsPage);
 
 //#endif

@@ -9,7 +9,7 @@ export default class FlightCard extends Component {
             <View style={styles.container}>
                 <Image style={styles.image} source={{uri: this.props.data.values.imgUrl}}/>
                 <TimeWidget data={this.props.data.values}/>
-                <Text>{this.props.data.values.cost}</Text>
+                <Text style={styles.finalPriceText}>{this.props.data.values.cost}</Text>
             </View>
             <View style={styles.line}></View>
         </View>);
@@ -25,13 +25,19 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: "white",
-        alignItems:"center"
+        alignItems:"center",
+        padding:16
     },
-    finalPriceText: {},
+    finalPriceText: {
+        marginLeft:16,
+        color:'blue',
+        fontSize:16,
+    },
     image: {
         height: 50,
         width: 50,
-        padding: 8
+        marginRight: 16,
+        resizeMode:"contain"
     },
     line: {
         height: 1.5,
