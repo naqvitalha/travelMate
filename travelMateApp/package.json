@@ -7,6 +7,9 @@
   },
   "dependencies": {
     "react": "15.2.1",
-    "react-native": "^0.30.0"
+    "react-native": "^0.30.0",
+    "recyclerlistview": "git+ssh://git@github.com/Flipkart/ReactEssentials.git#recyclerlistview-v1.0-alpha13",
+    "fk-react-native-sdk":"git+ssh://git@github.com/Flipkart/fk-react-native-sdk.git#release/v1.3"
+
   }
 }
