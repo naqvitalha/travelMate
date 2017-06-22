@@ -9,5 +9,14 @@ import { AppRegistry, StyleSheet, Text, View } from "react-native";
 import FlightsPage from "./src/flights/FlightsPage";
 import HotelsPage from './src/hotels/HotelsPage';
 
+//#if [RELEASE]
+
 //AppRegistry.registerComponent("flightApp", () => FlightsPage);
+//AppRegistry.registerComponent("hotelApp", () => HotelsPage);
+
+//#endif
+//#if [DEV]
+
 AppRegistry.registerComponent("AwesomeProject", () => HotelsPage);
+
+//#endif
