@@ -17,6 +17,8 @@ export default class HotelListLayoutProvider extends LayoutProvider {
         switch (data.type) {
             case "HOTEL_CARD":
                 return "HOTEL_CARD";
+            case "BANNER":
+                return "BANNER";
             default:
                 return null;
         }
@@ -26,6 +28,10 @@ export default class HotelListLayoutProvider extends LayoutProvider {
         switch(type){
             case "HOTEL_CARD":
                 dimension.height = 180;
+                dimension.width = deviceWidth;
+                break;
+            case "BANNER":
+                dimension.height = 120;
                 dimension.width = deviceWidth;
                 break;
         }

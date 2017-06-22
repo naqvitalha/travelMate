@@ -14,6 +14,7 @@ import {RecyclerListView, DataProvider, LayoutProvider} from 'recyclerlistview';
 import hotelData from './hotelJSON';
 import HotelCard from './HotelCard';
 import HotelListLayoutProvider from './HotelListLayoutProvider';
+import Banner from './Banner';
 var deviceWidth = Dimensions.get('window').width;
 
 class HotelsPage extends Component {
@@ -36,6 +37,9 @@ class HotelsPage extends Component {
         switch (itemType){
             case "HOTEL_CARD":
                 itemContent =  <HotelCard data={itemData}/>
+                break;
+            case "BANNER":
+                itemContent = <Banner data={itemData}/>
                 break;
         }
         return itemContent;

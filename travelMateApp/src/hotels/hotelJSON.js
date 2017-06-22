@@ -4,6 +4,10 @@
 var hotelData = {
     "hotels": [
         {
+            "imageURL": "https://promos.makemytrip.com/images/detail_banner_16032017.png",
+            "type" : "BANNER"
+        },
+        {
             "imageURL": "http://www.thefloridahotelorlando.com/var/floridahotelorlando/storage/images/media/images/photo-gallery/hotel-images/florida-hotel-orlando-night/27177-1-eng-US/Florida-Hotel-Orlando-Night.jpg",
             "title": "Florida Hotel",
             "pricePerNight": "15,000 per night",
