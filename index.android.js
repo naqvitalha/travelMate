@@ -10,13 +10,9 @@ import FlightsPage from "./src/flights/FlightsPage";
 import HotelsPage from './src/hotels/HotelsPage';
 
 //#if [RELEASE]
-
 //AppRegistry.registerComponent("flightApp", () => FlightsPage);
 //AppRegistry.registerComponent("hotelApp", () => HotelsPage);
-
 //#endif
 //#if [DEV]
-
 AppRegistry.registerComponent("AwesomeProject", () => FlightsPage);
-
 //#endif
