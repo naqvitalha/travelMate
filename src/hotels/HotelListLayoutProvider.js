@@ -37,7 +37,7 @@ export default class HotelListLayoutProvider extends LayoutProvider {
                 dimension.width = deviceWidth;
                 break;
             case "FLIPKART_CARD":
-                dimension.height = 50;
+                dimension.height = 80;
                 dimension.width = deviceWidth;
         }
     }

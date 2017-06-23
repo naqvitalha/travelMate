@@ -69,7 +69,7 @@ class HotelsPage extends Component {
             <View style={styles.container}>
                 <View style={{height :  56, width : deviceWidth, backgroundColor :'#124680' , flexDirection : 'row', elevation : 2}}>
                     <Image  source={{uri:'custom_back_icon'}} style={styles.backIcon}/>
-                    <Text style={{fontSize : 16, fontFamily : 'roboto-medium', color : '#ffffff', marginTop : 16, marginLeft : 8}}>Hotels to Singapore</Text>
+                    <Text style={{fontSize : 16, fontFamily : 'roboto-medium', color : '#ffffff', marginTop : 16, marginLeft : 8}}>Hotels in Singapore</Text>
                 </View>
                 <View style={{height : 40, width : deviceWidth, backgroundColor : '#ffffff', flexDirection:'row'}}>
                     <View style={{flex : 1, justifyContent : 'center', alignItems : 'center'}}>
@@ -83,7 +83,7 @@ class HotelsPage extends Component {
                 <View style={{height : 1, width : deviceWidth, backgroundColor : '#f1f3f6'}}/>
                 <View style={{height : 40, width : deviceWidth, backgroundColor : '#ffffff', flexDirection:'row', elevation : 1}}>
                     <View style={{flex : 1, justifyContent : 'center', alignItems : 'center'}}>
-                        <Text style={{fontSize : 12, fontFamily : 'roboto-medium', color : '#124680'}}>2N, 3D</Text>
+                        <Text style={{fontSize : 12, fontFamily : 'roboto-medium', color : '#124680'}}>2 Nights, 3 Days</Text>
                     </View>
                     <View style={{height : 40, width : 1, backgroundColor : '#f1f3f6'}}/>
                     <View style={{flex : 1, justifyContent : 'center', alignItems : 'center', elevation : 2}}>

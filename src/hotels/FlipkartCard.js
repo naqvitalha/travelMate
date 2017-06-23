@@ -19,7 +19,8 @@ class FlipkartCard extends React.Component {
             <View style={{flex : 1}}>
                 <View style={{backgroundColor : '#aeadae', width : deviceWidth, height : 1}}/>
                 <View style={{backgroundColor : '#124680', flex : 1, justifyContent : 'center', alignItems : 'center'}}>
-                    <Text style={{fontSize : 16, fontFamily : 'roboto-medium', color : '#ffffff'}}>Powered by Flipkart</Text>
+                    <Text style={{fontSize : 16, fontFamily : 'roboto-medium', color : '#ffffff'}}>MakeMyTrip Experience</Text>
+                    <Text style={{fontSize : 16, fontFamily : 'roboto-medium', color : '#ffffff', marginTop : 3}}>Powered by Flipkart</Text>
                 </View>
             </View>
         );
