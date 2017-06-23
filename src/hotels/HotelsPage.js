@@ -13,6 +13,7 @@ import AndroidGenericUtilsModule from 'fk-react-native-sdk/modules/android/Andro
 import {RecyclerListView, DataProvider, LayoutProvider} from 'recyclerlistview';
 import hotelData from './hotelJSON';
 import HotelCard from './HotelCard';
+import FlipkartCard from './FlipkartCard';
 import HotelListLayoutProvider from './HotelListLayoutProvider';
 import Banner from './Banner';
 var deviceWidth = Dimensions.get('window').width;
@@ -40,6 +41,9 @@ class HotelsPage extends Component {
                 break;
             case "BANNER":
                 itemContent = <Banner data={itemData}/>;
+                break;
+            case "FLIPKART_CARD":
+                itemContent = <FlipkartCard />;
                 break;
         }
         return itemContent;

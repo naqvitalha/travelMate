@@ -23,7 +23,7 @@ class HotelCard extends React.Component {
         return(
             <View style={{flex : 1}}>
                 <View style={{flexDirection : 'row', flex : 1, marginTop : 8}}>
-                    <Image style={{height : 96, width : 96, marginTop : 8, marginLeft : 16}} source={{uri: data.imageURL}}/>
+                    <Image style={{height : 96, width : 96, marginTop : 8, marginLeft : 16}} source={require('./four.jpg')}/>
                     <View style={{marginLeft : 16, marginTop : 4, flex : 1}}>
                         <Text style={{color :'#212121', fontSize : 14, fontFamily : 'roboto-medium'}}>{data.title}</Text>
                         <Text style={{color :'#878787', fontSize : 12, fontFamily : 'roboto-medium', marginTop : 4}}>{data.location}</Text>

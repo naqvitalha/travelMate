@@ -19,6 +19,8 @@ export default class HotelListLayoutProvider extends LayoutProvider {
                 return "HOTEL_CARD";
             case "BANNER":
                 return "BANNER";
+            case "FLIPKART_CARD":
+                return "FLIPKART_CARD";
             default:
                 return null;
         }
@@ -34,6 +36,9 @@ export default class HotelListLayoutProvider extends LayoutProvider {
                 dimension.height = 105;
                 dimension.width = deviceWidth;
                 break;
+            case "FLIPKART_CARD":
+                dimension.height = 50;
+                dimension.width = deviceWidth;
         }
     }
 }
