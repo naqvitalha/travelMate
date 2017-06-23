@@ -18,7 +18,7 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor:'orange'
+        backgroundColor:'black'
 
     },
     line: {
