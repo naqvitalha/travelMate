@@ -3,10 +3,8 @@ import {RecyclerListView, LayoutProvider, DataProvider} from "recyclerlistview";
 import {View, Dimensions, Text, Image} from "react-native";
 import FlightCard from "./FlightCard";
 import FlightData from "./FlightData";
-import TimeWidget from "./TimeWidget";
 import HotelCard from "./HotelCard";
 import TopWidget from "./TopWidget";
-import AndroidGenericUtilsModule from "fk-react-native-sdk/modules/android/AndroidGenericUtilsModule";
 let {height, width} = Dimensions.get('window');
 export default class FlightsPage extends Component {
     constructor(args) {
@@ -41,11 +39,6 @@ export default class FlightsPage extends Component {
         this._renderRow = this._renderRow.bind(this);
     }
 
-    componentWillMount(){
-        if (AndroidGenericUtilsModule.isAvailable()) {
-            AndroidGenericUtilsModule.setStatusBarColor('#FF8C00');
-        }
-    }
 
     _renderRow(type, data) {
         switch (type) {
@@ -65,8 +58,7 @@ export default class FlightsPage extends Component {
     render() {
         return <View style={styles.container}>
             <View style={styles.header}>
-                <Image  source={{uri:'custom_back_icon'}} style={styles.backIcon}/>
-                <Text style={styles.headerText}>Yatra Travels</Text>
+                <Text style={styles.headerText}>Travel Mate</Text>
             </View>
             <RecyclerListView rowRenderer={this._renderRow} dataProvider={this.state.dataProvider}
                               layoutProvider={this._layoutProvider}/>

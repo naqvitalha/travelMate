@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableHighlight} from 'react-native';
-import Constants from "../constants/Constants";
+import {Text, View, Image} from 'react-native';
 export default class TopWidget extends Component {
     render() {
         return (
@@ -18,7 +17,7 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor:'black'
+        backgroundColor:'orange'
 
     },
     line: {

@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
 import {Text, View, Image, TouchableHighlight} from 'react-native';
-import NavigationManager from "fk-react-native-sdk/modules/navigation/NavigationManager";
-import Constants from "../constants/Constants";
 export default class HotelCard extends Component {
     render() {
         return (
             <TouchableHighlight style={{backgroundColor:"#F7F7F7", elevation: 1, height: 80}} underlayColor="#878787" onPress={() => {
-                NavigationManager.navigate(Constants.hotelAction);
+
             }}>
                 <View style={styles.container}>
                     <Image style={styles.image} source={{uri: "https://www.myrtlebeachspeedway.com/wp-content/uploads/2015/09/hotel-icon.png"}}/>
                     <Text style={styles.finalPriceText}>Looking for a Hotel?</Text>
                     <View style={styles.iconContainer}>
-                    <Image style={styles.chevron} source={{uri: "chevron"}}/>
                     </View>
                 </View>
             </TouchableHighlight>

@@ -1,15 +1,23 @@
 {
-  "name": "travelMateApp",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "react-native start"
-  },
-  "dependencies": {
-    "react": "15.2.1",
-    "react-native": "^0.30.0",
-    "recyclerlistview": "git+ssh://git@github.com/Flipkart/ReactEssentials.git#recyclerlistview-v1.0-alpha13",
-    "fk-react-native-sdk":"git+ssh://git@github.com/Flipkart/fk-react-native-sdk.git#release/v1.3"
-
-  }
+	"name": "travelMate",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"dependencies": {
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.47.1",
+		"recyclerlistview": "^1.0.3"
+	},
+	"devDependencies": {
+		"babel-jest": "20.0.3",
+		"babel-preset-react-native": "2.1.0",
+		"jest": "20.0.4",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
 }

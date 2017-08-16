@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
-import {Image} from "react-native/Libraries/Animated/src/Animated";
+import {Text, View,Image} from "react-native";
 import TimeWidget from "./TimeWidget";
 export default class FlightCard extends Component {
     render() {
@@ -37,10 +36,9 @@ const styles = {
         height: 50,
         width: 50,
         marginRight: 16,
-        resizeMode:"contain"
     },
     line: {
         height: 1.5,
-        backgroundColor: "lightGrey"
+        backgroundColor: "#d3d3d3"
     }
 }
