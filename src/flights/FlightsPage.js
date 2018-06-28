@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import {RecyclerListView, LayoutProvider, DataProvider} from "recyclerlistview";
+import {RecyclerListView, DataProvider} from "recyclerlistview-gridlayoutmanager";
+import FlightGridLayoutProvider from './FlightGridLayoutProvider';
 import {View, Dimensions, Text, Image} from "react-native";
 import FlightCard from "./FlightCard";
 import FlightData from "./FlightData";
@@ -14,28 +15,7 @@ export default class FlightsPage extends Component {
                 return r1 !== r2
             }).cloneWithRows(FlightData)
         };
-        this._layoutProvider = new LayoutProvider((i) => {
-            return this.state.dataProvider.getDataForIndex(i).type;
-        }, (type, dim) => {
-            switch (type) {
-                case "HOTEL_ITEM":
-                    dim.width = width;
-                    dim.height = 83;
-                    break;
-                case "FL_ITEM":
-                    dim.width = width;
-                    dim.height = 80;
-                    break;
-                case "HEADER":
-                    dim.width = width;
-                    dim.height = 300;
-                    break;
-                default:
-                    dim.width = width;
-                    dim.height = 0;
-
-            }
-        });
+        this._layoutProvider = new FlightGridLayoutProvider(this.state.dataProvider);
         this._renderRow = this._renderRow.bind(this);
     }
 
@@ -45,9 +25,9 @@ export default class FlightsPage extends Component {
             case "HOTEL_ITEM":
                 return <HotelCard/>
             case "FL_ITEM":
-                return <FlightCard data={data}/>;
+                return <FlightCard/>;
             case "HEADER":
-                return <TopWidget data={data}/>;
+                return <TopWidget/>;
             default:
                 return null;
 
@@ -57,9 +37,6 @@ export default class FlightsPage extends Component {
 
     render() {
         return <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.headerText}>Travel Mate</Text>
-            </View>
             <RecyclerListView rowRenderer={this._renderRow} dataProvider={this.state.dataProvider}
                               layoutProvider={this._layoutProvider}/>
         </View>

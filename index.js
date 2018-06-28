@@ -6,8 +6,8 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry
+    AppRegistry
 } from 'react-native';
 import FlightsPage from "./src/flights/FlightsPage";
 
-AppRegistry.registerComponent('travelMate', () => FlightsPage);
+AppRegistry.registerComponent('AwesomeProject', () => FlightsPage);
