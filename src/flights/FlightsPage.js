@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {RecyclerListView, DataProvider} from "recyclerlistview-gridlayoutmanager";
 import FlightGridLayoutProvider from './FlightGridLayoutProvider';
+import FlightGridLayoutProviderHorizontal from './FlightGridLayoutProviderHorizontal';
 import {View, Dimensions, Text, Image} from "react-native";
 import FlightCard from "./FlightCard";
 import FlightData from "./FlightData";
@@ -15,7 +16,13 @@ export default class FlightsPage extends Component {
                 return r1 !== r2
             }).cloneWithRows(FlightData)
         };
+        //#if [VERTICAL]
         this._layoutProvider = new FlightGridLayoutProvider(this.state.dataProvider);
+        //#endif
+        //#if [HORIZONTAL]
+        // this._layoutProvider = new FlightGridLayoutProviderHorizontal(this.state.dataProvider);
+        //#endif
+
         this._renderRow = this._renderRow.bind(this);
     }
 
@@ -36,8 +43,14 @@ export default class FlightsPage extends Component {
     }
 
     render() {
+        //#if [VERTICAL]
+        let isHorizontal = false;
+        //#endif
+        //#if [HORIZONTAL]
+        // let isHorizontal = true;
+        //#endif
         return <View style={styles.container}>
-            <RecyclerListView rowRenderer={this._renderRow} dataProvider={this.state.dataProvider}
+            <RecyclerListView isHorizontal={isHorizontal} rowRenderer={this._renderRow} dataProvider={this.state.dataProvider}
                               layoutProvider={this._layoutProvider}/>
         </View>
     }
