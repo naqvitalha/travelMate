@@ -6,7 +6,7 @@ export default class FlightGridLayoutProvider extends GridLayoutProvider {
         this.getLayoutTypeForIndex = this.getLayoutTypeForIndex.bind(this);
         this.setMaxSpan = this.setMaxSpan.bind(this);
         this.getSpanForIndex = this.getSpanForIndex.bind(this);
-        this.setDimensionForIndex = this.setDimensionForIndex.bind(this);
+        this.getDimensionForIndex = this.getDimensionForIndex.bind(this);
     }
 
     getLayoutTypeForIndex(index) {
@@ -29,7 +29,7 @@ export default class FlightGridLayoutProvider extends GridLayoutProvider {
         }
     }
 
-    setDimensionForIndex(index){
+    getDimensionForIndex(index){
         return 100;
     }
 }

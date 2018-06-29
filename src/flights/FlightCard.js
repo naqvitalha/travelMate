@@ -3,7 +3,7 @@ import {View, Text} from "react-native";
 export default class FlightCard extends Component {
     render() {
         return(
-            <View style={{flex:1, backgroundColor : 'green', justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{flex:1, height:140,backgroundColor : 'green', justifyContent: 'center', alignItems: 'center'}}>
                 <Text>My Span is 4</Text>
             </View>
         )

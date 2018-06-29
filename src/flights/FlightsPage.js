@@ -37,7 +37,7 @@ export default class FlightsPage extends Component {
 
     render() {
         return <View style={styles.container}>
-            <RecyclerListView isHorizontal={false} rowRenderer={this._renderRow} dataProvider={this.state.dataProvider}
+            <RecyclerListView forceNonDeterministicRendering={true} isHorizontal={true} rowRenderer={this._renderRow} dataProvider={this.state.dataProvider}
                               layoutProvider={this._layoutProvider}/>
         </View>
     }
